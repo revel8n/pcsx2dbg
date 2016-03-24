@@ -157,7 +157,7 @@ static u8 gdb_read_byte(void)
 
 	res = recv(sock, (char*)&c, 1, MSG_WAITALL);
 	if (res != 1)
-		return fail("recv failed");
+		return fail("recv failed\n");
 
 	return c;
 }
@@ -347,7 +347,7 @@ static int gdb_data_available(void)
 	t.tv_usec = 2000;
 
 	if (select(sock + 1, fds, NULL, NULL, &t) < 0)
-		return fail("select failed");
+		return fail("select failed\n");
 
 	if (FD_ISSET(sock, fds))
 		return 1;
@@ -1104,7 +1104,8 @@ void gdb_handle_events(event_callback* callback)
 
 	while (gdb_data_available())
     {
-		gdb_read_command();
+		if (!gdb_read_command())
+            break;
 		gdb_parse_command(callback);
 	}
 }

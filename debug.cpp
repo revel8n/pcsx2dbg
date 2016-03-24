@@ -216,7 +216,7 @@ struct register_group
     { EECAT_GPR, GPR_COUNT, RC_GPR, dt_dword, REGISTER_ADDRESS, nullptr },
     { EECAT_GPR, 32, RC_GPR_EXTENDED, dt_byte16, REGISTER_CUSTFMT | REGISTER_ADDRESS, register_formats },
     { EECAT_CP0, 32, RC_CP0, dt_dword, 0, nullptr },
-    { EECAT_FPR, 32, RC_FPR, dt_dword, 0, nullptr },
+    { EECAT_FPR, 32, RC_FPR, dt_float, 0, nullptr },
     { EECAT_FCR, 32, RC_FCR, dt_dword, 0, nullptr },
     { EECAT_VU0F, 32, RC_VU0F, dt_byte16, REGISTER_CUSTFMT, register_formats },
     { EECAT_VU0I, 32, RC_VU0I, dt_dword, 0, nullptr },
