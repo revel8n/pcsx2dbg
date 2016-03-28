@@ -45,7 +45,7 @@
 #endif
 
 #define DEBUGGER_NAME "pcsx2"
-#define DEBUGGER_ID PLFM_MIPS
+#define DEBUGGER_ID (0x8001)
 #define PROCESSOR_NAME "r5900l"
 
 static error_t idaapi idc_threadlst(idc_value_t *argv, idc_value_t *res);
@@ -535,7 +535,7 @@ int idaapi process_get_info(int n, process_info_t *info)
         return 0;
 
     info->pid = 0;
-    qstrncpy(info->name, "SPU3", sizeof(info->name));
+    qstrncpy(info->name, "pcsx2", sizeof(info->name));
 
     return 1;
 }

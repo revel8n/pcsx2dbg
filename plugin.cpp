@@ -280,7 +280,7 @@ static void term_plugin(void)
 }
 
 //--------------------------------------------------------------------------
-char comment[] = "SPU3 debugger plugin by revel8n.";
+char comment[] = "PCSX2 debugger plugin by revel8n.";
 
 char help[] =
 "pcsx2 debugger plugin by revel8n.\n"
